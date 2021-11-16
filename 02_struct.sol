@@ -12,6 +12,8 @@ contract Contract1 {
     MyStruct struct1 = MyStruct("Engin",40,true);
     MyStruct struct2 = MyStruct("Filiz",40,false);
     MyStruct struct3= MyStruct("Emre",35,true);
+    
+    //Struct'a değer eklemek için en basit yol budur
 
  
 
@@ -32,3 +34,5 @@ contract Contract1 {
     
 
 }
+
+
