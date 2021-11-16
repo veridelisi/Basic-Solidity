@@ -1,19 +1,36 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
 
-contract Course {
+pragma solidity ^0.6.0;
+
+contract SimpleStorage {
     
-    struct Instructor {
-        uint age;
-        string first_name;
-        string last_name;
+    
+    uint256 favoriteNumber;
+
+    
+    struct People {
+        uint256 favoriteNumber;
+        string name;
     }
     
-    mapping(address => Instructor) instructors;
+   
+    mapping(string => uint256) public nameToFavoriteNumber;
     
-    function getInstructorInfos(address _instructor_address) public view returns (uint, string memory, string memory) {
+    //Mapping tanımlanıyor. String:key, uint256:value
+    
+    
+    function addPerson(string memory _name, uint256 _favoriteNumber) public{
+    
+       
+        nameToFavoriteNumber[_name] = _favoriteNumber;
         
-        return (instructors[_instructor_address].age,    instructors[_instructor_address].first_name, instructors[_instructor_address].last_name);
-    }
+        //Yeni eklenen favoritenumbers'ı mapping [name] e atıyoruz. 
+        
+        
+    }    
+    
+    
+    
 }
-//https://jeancvllr.medium.com/solidity-tutorial-all-about-structs-b3e7ca398b1e
+
+
