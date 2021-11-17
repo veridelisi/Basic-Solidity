@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 
 contract Counter {
     
-    event ValueChanged(uint indexed oldValue, uint256 indexed newValue);
+   // event ValueChanged(uint indexed oldValue, uint256 indexed newValue);
     
     // tracks the number of counts
     uint256 count = 0;
@@ -13,7 +13,9 @@ contract Counter {
     // Function that increments counter
     function increment() public {
         count += 1;
-        emit ValueChanged(count - 1, count);
+       
+       
+       //emit ValueChanged(count - 1, count);
     }
     
     
