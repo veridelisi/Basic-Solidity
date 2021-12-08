@@ -21,6 +21,9 @@ contract Array{
    // array that can hold 5 unsigned integers maximum: (One-Dimensional array, fixed size)
    uint[5] public my_dizi;
    
+   // Same things array that can hold 5 unsigned integers maximum: (One-Dimensional array, fixed size)
+   uint[5] public my_dizi=[1,2,3,4,5];
+   uint[] public my_dizi2=[1,2,3,4,5];
    
    // array that can hold  unsigned integers unlimited :(One-Dimensional array, Dynamic Size)
    uint[] public my_dizi2;
