@@ -18,11 +18,7 @@ contract SomeContract{
         require(succes,"delegatecall failed");
     }
 
-    //this one fails, staticcall can't modify storage
-     function simpleStaticcall(address otherContract,uint256 setInt,string memory setString) public {
-        (bool succes,)=otherContract.staticcall(abi.encodeWithSignature("setVal(uint256,string)",setInt,setString));
-        require(!succes,"staticcall somewhat failed");
-    }
+    
 }
 
 
