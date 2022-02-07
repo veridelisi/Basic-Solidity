@@ -1,3 +1,4 @@
+//https://veridelisi.medium.com/call-delegatecall-in-solidity-97ab5ed22888
 //SPDX-License-Identifier:MIT
 pragma solidity ^0.8.5;
 
