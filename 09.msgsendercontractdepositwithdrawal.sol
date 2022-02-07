@@ -1,7 +1,7 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.11;
 
-import "hardhat/console.sol";
+
 
 contract Bank {
 
@@ -9,11 +9,11 @@ contract Bank {
 
  
 
-  constructor() public {}
+  
 
   function deposit() public payable {
       balances[msg.sender] -= msg.value;
-      address(this).balance += msg.value;
+   
   }
 
   function see() public view returns (address){
