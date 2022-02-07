@@ -1,3 +1,4 @@
+//https://veridelisi.medium.com/inheritance-in-constructor-in-solidity-a5e34f4c7b27
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.11;
