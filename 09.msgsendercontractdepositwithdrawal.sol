@@ -7,12 +7,8 @@ contract Bank {
 
   mapping( address => uint256 ) balances;
 
- 
-
-  
-
   function deposit() public payable {
-      balances[msg.sender] -= msg.value;
+      balances[msg.sender] += msg.value;
    
   }
 
