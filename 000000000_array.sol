@@ -35,11 +35,11 @@ contract Array {
     function getArr2() public view returns (uint[] memory) {
         return array2;
     }
-/*
-     function getArr3() public view returns (uint[] memory) {
+
+     function getArr3() public view returns (uint[5] memory) {
         return fixArray;
     }
-*/
+
 
      function getArr4() public view returns (uint[] memory) {
         return fixArray2;
@@ -79,13 +79,7 @@ contract Array {
         array2.pop();
     }
 
-/*
-    function pop3() public {
-        // Remove last element from array
-        // This will decrease the array length by 1
-        fixArray.pop();
-    }
-*/
+
 
     function pop4() public {
         // Remove last element from array
