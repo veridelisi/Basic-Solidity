@@ -1,91 +1,74 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.11;
 
+/** 
+@title: Arrays in Solidity
+@author: Engin YILMAZ (veridelisi)
+ */
+
 contract Array {
-    // Flexible Array
-    uint[] public array;
-    uint[] public array2 = [1, 2, 3];
+    // Dynamic Array
+    uint[] public darray;
 
-    // Fixed sized array
-    uint[5] public fixArray=[uint(7),8,9,10,11];
-    uint[] public fixArray2=new uint[](5);
-    
-// Get element from array
-    function get(uint i) public view returns (uint) {
-        return array[i];
+    // Dynamic Array with inicial values: darray2
+    uint[] public darray2=[0,1,2,3];
+
+    // Dynamic Array with inicial "0" values: darray3
+    uint[] public darray3=new uint[](4);
+
+    //Fixed Array
+
+
+    // Add to element to the dynamic arrays with push()
+    function pushDarray(uint item) public  {
+        darray.push(item);
     }
 
-    function get2(uint i) public view returns (uint) {
-        return array2[i];
+    function pushDarray2(uint item) public  {
+        darray2.push(item);
     }
 
-    function get3(uint i) public view returns (uint) {
-        return fixArray[i];
-    }
-
-    function get4(uint i) public view returns (uint) {
-        return fixArray2[i];
-    }
-
-    // Get all elements from array
-    function getArr() public view returns (uint[] memory) {
-        return array;
-    }
-
-    function getArr2() public view returns (uint[] memory) {
-        return array2;
-    }
-
-     function getArr3() public view returns (uint[5] memory) {
-        return fixArray;
+    function pushDarray3(uint item) public {
+        darray3.push(item);
     }
 
 
-     function getArr4() public view returns (uint[] memory) {
-        return fixArray2;
+    // Update the element in dynamic arrays 
+    //Don't remember that you must be add elements to the darray before the updating
+   function updateDarray(uint index, uint value) public {
+        darray[index] = value;
+   }
+
+    function updateDarray2(uint index,uint value) public {
+       darray2[index] = value;
     }
 
-// Add element
-    function push(uint i) public {
-        // Append to array
-        // This will increase the array length by 1.
-        array.push(i);
+    function updateDarray3(uint index,uint value) public {
+        darray3[index] = value;
     }
 
-    function push2(uint i) public {
-        // Append to array
-        // This will increase the array length by 1.
-        array2.push(i);
+    //See all the elements of dynamic arrays
+    function seeDarray() public view returns (uint[] memory) {
+       return darray;
+    }
+    function seeDarray2() public view returns(uint[] memory){
+        return darray2;
+    }
+    function seeDarray3() public view returns(uint[] memory){
+        return darray3;
     }
 
-    
-
-      function push4(uint i) public {
-        // Append to array
-        // This will increase the array length by 1.
-        fixArray2.push(i);
+    //Delete the last element of dynamic arrays
+    function deleteDarray() public {
+        darray.pop();
+    }
+    function deleteDarray2() public {
+        darray2.pop();
+    }
+    function deleteDarray3() public {
+        darray3.pop();
     }
 
-// delete element
-    function pop() public {
-        // Remove last element from array
-        // This will decrease the array length by 1
-        array.pop();
-    }
-
-    function pop2() public {
-        // Remove last element from array
-        // This will decrease the array length by 1
-        array2.pop();
-    }
-
-
-
-    function pop4() public {
-        // Remove last element from array
-        // This will decrease the array length by 1
-        fixArray2.pop();
-    }
 
     //get length
 
@@ -106,4 +89,4 @@ contract Array {
     }
     
 }
-//Source : https://solidity-by-example.org/array/
+
