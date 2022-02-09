@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.11;
 
-/** 
-@title: Arrays in Solidity
-@author: Engin YILMAZ (veridelisi)
- */
+
+//@title: Arrays in Solidity | @author: Engin YILMAZ (veridelisi)
+ 
 
 contract Array {
-    // Dynamic Array
+    //DYNAMIC ARRAY
+    //Dynamic Array
     uint[] public darray;
 
     // Dynamic Array with inicial values: darray2
@@ -16,9 +16,17 @@ contract Array {
     // Dynamic Array with inicial "0" values: darray3
     uint[] public darray3=new uint[](4);
 
+
+    //FIXED ARRAY
     //Fixed Array
+    uint[3] public farray;
 
+    //Fixed Array with values : farray2
+    uint[3] public farray2=[uint(1),2,3];
 
+    
+
+    //Dynamic Array
     // Add to element to the dynamic arrays with push()
     function pushDarray(uint item) public  {
         darray.push(item);
@@ -33,6 +41,7 @@ contract Array {
     }
 
 
+    //Dynamic Array
     // Update the element in dynamic arrays 
     //Don't remember that you must be add elements to the darray before the updating
    function updateDarray(uint index, uint value) public {
@@ -47,6 +56,19 @@ contract Array {
         darray3[index] = value;
     }
 
+    //Fixed Array
+    // Update the element in fixed arrays 
+    function updateFarray( uint index, uint value) public {
+        farray[index]=value;
+    }
+
+    function updateFarray2(uint index, uint value) public {
+        farray2[index]=value;
+    }
+
+    
+
+    //Dynamic Array
     //See all the elements of dynamic arrays
     function seeDarray() public view returns (uint[] memory) {
        return darray;
@@ -57,7 +79,22 @@ contract Array {
     function seeDarray3() public view returns(uint[] memory){
         return darray3;
     }
+    
 
+    //Fixed Array
+    //See all the elements of fixed arrays
+    //Don't forget that you must indicate array length in returns as  uint[3] memory
+    function seeFarray() public view returns (uint[3] memory){
+        return farray;
+    }
+
+    function seeFarray2() public view returns (uint[3] memory){
+        return farray2;
+    }
+
+
+
+    //Dynamic Array
     //Delete the last element of dynamic arrays
     function deleteDarray() public {
         darray.pop();
@@ -70,23 +107,5 @@ contract Array {
     }
 
 
-    //get length
-
-    function getLength() public view returns (uint) {
-        return array.length;
-    }
-
-    function getLength2() public view returns (uint) {
-        return array2.length;
-    }
-
-    function getLength3() public view returns (uint) {
-        return fixArray.length;
-    }
-
-     function getLength4() public view returns (uint) {
-        return fixArray2.length;
-    }
-    
-}
+ }
 
