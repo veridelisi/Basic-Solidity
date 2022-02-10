@@ -83,7 +83,10 @@ contract Array {
 
     //Fixed Array
     //See all the elements of fixed arrays
+    //farray is a fixed-sized array, and so for seeFarray() to be able to return it, the data type of the return value needs to be defined as 
     //Don't forget that you must indicate array length in returns as  uint[3] memory
+
+    returns(uint[5] memory)
     function seeFarray() public view returns (uint[3] memory){
         return farray;
     }
