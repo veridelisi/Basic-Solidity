@@ -95,7 +95,7 @@ contract Array {
         return farray2;
     }
 
-
+  
 
     //Dynamic Array
     //Delete the last element of dynamic arrays
@@ -107,6 +107,13 @@ contract Array {
     }
     function deleteDarray3() public {
         darray3.pop();
+    }
+    
+    //Values cannot be removed from a fixed-sized array to the extent that this would reduce its size. 
+    //However, the following function, would enable values at specific index positions to be set to zero. 
+    
+    function deleteFarray2(uint index) public {
+    delete farray2[index];
     }
 
 
