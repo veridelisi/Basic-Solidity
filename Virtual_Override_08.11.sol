@@ -11,11 +11,7 @@
 	     function bor() virtual public pure returns (string memory) {
 	         return "Bor from A";
 	     }
-	
 
-	     function a() virtual public pure returns (string memory) {
-	         return "special A";
-	     }
 	 }
 	
 
@@ -28,14 +24,37 @@
 	     function bor() virtual public pure returns (string memory) {
 	         return "Bor from B";
 	     }
-	
 
-	     function b() virtual public pure returns (string memory) {
-	         return "special b";
-	     }
+	    
 	 }
 
- contract C is B, A{
+ 
+
+	  contract C is B{
+	     function foo() virtual override public pure returns (string memory) {
+	         return B.foo();
+	     }
+	
+
+	     function bor() virtual override public pure returns (string memory) {
+	         return B.bor();
+	     }
+
+	    
+	 }
+
+	 contract D is C{
+	     function foo() virtual override public pure returns (string memory) {
+	         return C.foo();
+	     }
+
+	     function bor() virtual override public pure returns (string memory) {
+	         return C.bor();
+	     }
+	 
+	 }
+
+ contract E is B, A{
 	     function foo() virtual override(B,A) public pure returns (string memory) {
 	         return super.foo();
 	     }
@@ -45,8 +64,5 @@
 	         return super.bor();
 	     }
 	
-
-	     function c() virtual public pure returns (string memory) {
-	         return "special c";
-	     }
+	   
 	 }
