@@ -36,12 +36,12 @@
 	 }
 
  contract C is B, A{
-	     function foo() virtual override public pure returns (string memory) {
+	     function foo() virtual override(B,A) public pure returns (string memory) {
 	         return super.foo();
 	     }
 	
 
-	     function bor() virtual override public pure returns (string memory) {
+	     function bor() virtual override(B,A) public pure returns (string memory) {
 	         return super.bor();
 	     }
 	
