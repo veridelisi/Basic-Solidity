@@ -27,7 +27,7 @@ contract LogicContract{
     uint256 public number; // Storage is same with the proxy
 
     function changeUint(uint256 _n) external returns(bytes memory, uint, bool){
-        number = _n;
+        number = _n+200;
 
         return("Hello World", 100, true);
     }
