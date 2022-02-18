@@ -32,7 +32,7 @@ contract FunctionVisibility {
 }
 contract ExternalContract {
 
-    FunctionVisibility external_contract = new FunctionVisibility();
+    FunctionVisibility public external_contract = new FunctionVisibility();
 
     function callPublicFromExternal() public {
         // This succeeds. Public functions are included in contract interface
