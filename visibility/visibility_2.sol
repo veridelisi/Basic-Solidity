@@ -32,3 +32,11 @@ contract Base {
 
 
 }
+
+contract Sample {
+    Base samplebase=new Base();
+    function reach() public view returns(string memory) {
+    return samplebase.externalFunc();
+    }
+ 
+}
