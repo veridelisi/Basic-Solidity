@@ -15,7 +15,7 @@ function addClass(address class, uint studentsnumber) public {
 mapping(string => mapping(uint => uint)) public examNote;
 
 
-// add student's name and his class number and his exam success position
+// Add student's name, his class number and student exam note
 function addStudentPosition( string memory studentname, uint studentnumber, uint note) public {
     examNote[studentname][studentnumber]=note;
 }
