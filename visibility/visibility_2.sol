@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.10;
+pragma solidity ^0.8.19;
 
 contract Base {
    
@@ -35,8 +35,23 @@ contract Base {
 
 contract Sample {
     Base samplebase=new Base();
-    function reach() public view returns(string memory) {
+
+    function reachExternalFunction() public view returns(string memory) {
     return samplebase.externalFunc();
     }
+
+      function reachPublicFunction() public view returns(string memory) {
+       return samplebase.publicFunc();
+    }
+       
+    function reachInternalFunction() public view returns(string memory) {
+       return samplebase.testInternalFunc();
+    }
+
+    function reachPrivateFunction() public view returns(string memory) {
+       return samplebase.testPrivateFunc();
+    }
+
+
  
 }
