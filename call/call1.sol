@@ -4,15 +4,11 @@ pragma solidity ^0.8.13;
 contract CrossContract {
   
 
-    function getLowerPrice(
-        address _priceOracle1,
-        address _priceOracle2
-    ) external view returns (uint256) {
+    function getLowerPrice(address _priceOracle1, address _priceOracle) external view returns (uint256) {
     
-      //Call function
       if(PriceOracle1(_priceOracle1).price() < PriceOracle2(_priceOracle2).price()){
             return PriceOracle1(_priceOracle1).price();
-        }
+              }
         else {
          return PriceOracle2(_priceOracle2).price();
         }
