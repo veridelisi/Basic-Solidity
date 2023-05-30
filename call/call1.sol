@@ -5,7 +5,7 @@ contract CrossContract {
   
 
     function getLowerPrice(address _priceOracle1, address _priceOracle) external view returns (uint256) {
-    
+      // Call Function
       if(PriceOracle1(_priceOracle1).price() < PriceOracle2(_priceOracle2).price()){
             return PriceOracle1(_priceOracle1).price();
               }
