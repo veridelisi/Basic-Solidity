@@ -7,7 +7,7 @@ contract CrossContract {
     PriceOracle1 priceOracle1;
     PriceOracle2 priceOracle2;
 
-    function callTime( address _p1, address _p2) public {
+    function callOracleContract( address _p1, address _p2) public {
         priceOracle1 = PriceOracle1(_p1);
         priceOracle2 = PriceOracle2(_p2);
     }
