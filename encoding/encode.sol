@@ -1,15 +1,16 @@
-// SPDX-License-Identifier: MIT
-pragma solidity 0.8.19;
+// SPDX-License-Identifier: BUSL-1.1
+pragma solidity ^0.8.19;
 
-contract EnCodeDeCode {
+contract Decoder {
+    /* This exercise assumes you know how abi decoding works.
+        1. In the `decodeData` function below, write the logic that decodes a `bytes` data, based on the function parameters
+        2. Return the decoded data
+    */
+     function encodeData (string memory text, uint256 number) public pure returns(bytes memory b){
+        return b = abi.encode (text, number);
+     }
 
-  //encode
-  function enCode(address _address, uint number) public pure returns(bytes memory){
-      return (abi.encode(_address, number));
-  }
-  //decode
-  function deCode(bytes memory data) public pure returns(address _address, uint _number){
-      (_address, _number) = abi.decode(data, (address, uint));
-  }
-
+    function decodeData( bytes memory _data) public pure returns (string memory x, uint256 y) {
+        (x,y) = abi.decode(_data, (string, uint256));
+    }
 }
