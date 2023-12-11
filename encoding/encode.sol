@@ -13,4 +13,3 @@ contract Decoder {
 }
 
 
-cont
